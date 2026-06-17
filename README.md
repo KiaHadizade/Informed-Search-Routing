@@ -35,7 +35,7 @@ The graph represents a city map where:
 ## Project Structure
 
 ```text
-project/
+Informed-Search-Routing/
 │
 ├── data/
 │   └── city_graph.json
