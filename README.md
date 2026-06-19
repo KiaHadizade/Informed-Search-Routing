@@ -40,6 +40,10 @@ Informed-Search-Routing/
 ├── data/
 │   └── city_graph.json
 │
+├── docs/
+│   ├── Project.pdf
+│   └── report.ipynb
+│
 ├── src/
 │   ├── astar.py
 │   ├── graph_loader.py
@@ -49,10 +53,22 @@ Informed-Search-Routing/
 │   └── utils.py
 │
 ├── tests/
-│   └── test_algorithms.py
+│   ├── test_algorithms.py
+│   └── test_loader.py
 │
 ├── .gitignore
-├── Project.pdf
 ├── README.md
 └── requirements.txt
 ```
+## Install Dependencies
+`pip install -r requirements.txt`
+
+## References
+[A* search algorithm](https://en.wikipedia.org/wiki/A*_search_algorithm)
+[A* Search Algorithm](https://www.geeksforgeeks.org/dsa/a-search-algorithm/)
+[Introduction to A*](https://theory.stanford.edu/~amitp/GameProgramming/AStarComparison.html)
+[A* Search Algorithm](https://viblo.asia/p/a-search-algorithm-aWj53BN1l6m)
+[A* Algorithm (OCR A Level Computer Science): Revision Note](https://www.savemyexams.com/a-level/computer-science/ocr/17/revision-notes/8-algorithms/8-1-algorithms/a-algorithm/)
+[Application of A* algorithm in intelligent vehicle path planning](https://www.extrica.com/article/22828)
+[Introduction to the A* Algorithm](https://www.redblobgames.com/pathfinding/a-star/introduction.html)
+[Amit’s A* Pages](https://theory.stanford.edu/~amitp/GameProgramming/)
