@@ -1,12 +1,8 @@
-# =========================
-# Impoprt Libraries
-# =========================
+# ===== Impoprt Libraries =====
 import heapq # Needed For Priority Queue
 from src.heuristic import euclidean_distance
 
-# =========================
-# Path Reconstruction Function
-# =========================
+# ===== Path Reconstruction Function =====
 def reconstruct_path(came_from, current):
 
     path = [current]
@@ -19,15 +15,10 @@ def reconstruct_path(came_from, current):
 
     return path
 
-# =========================
-# A* Function Skeleton
-# =========================
+# ===== A* Function Skeleton =====
 def astar(graph, start, goal):
 
-    # =========================
-    # Definition Of Open Set
-    # =========================
-
+    # ===== Definition Of Open Set =====
     # Priority Queue maintains: (f_score, node)
     open_set = []
     heapq.heappush(
@@ -35,10 +26,7 @@ def astar(graph, start, goal):
         (0, start)
     )
 
-    # =========================
-    # Building Data Structures
-    # =========================
-
+    # ===== Building Data Structures =====
     # Parents
     came_from = {}
 
@@ -52,11 +40,9 @@ def astar(graph, start, goal):
 
     # Number of visits
     visited_nodes = 0
-    
     closed_set = set()
-    # =========================
-    # Main Loop
-    # =========================
+
+    # ===== Main Loop =====
     while open_set:
         # Get The Best Node
         current_f, current = heapq.heappop(open_set)
@@ -67,9 +53,7 @@ def astar(graph, start, goal):
         closed_set.add(current)
         visited_nodes += 1
 
-        # =========================
-        # Check The Target
-        # =========================
+        # ===== Check The Target =====
         if current == goal:
             path = reconstruct_path(came_from, current)
 
@@ -79,16 +63,12 @@ def astar(graph, start, goal):
                 visited_nodes
             )
 
-        # =========================
-        # Check Neighbors
-        # =========================
+        # ===== Check Neighbors =====
         for neighbor, cost in graph[current]:
             # New Cost Calculation
             tentative_g = (g_score[current] + cost)
 
-            # =========================
-            # If A Better Path Is Found
-            # =========================
+            # ===== If A Better Path Is Found =====
             if (neighbor not in g_score or tentative_g < g_score[neighbor]):
                 # Save Parent
                 came_from[neighbor] = current
