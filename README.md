@@ -111,3 +111,22 @@ Visited Nodes:
 6
 
 ---
+
+> [!NOTE]
+> Python Supports Implicit Namespace Packages (PEP 420), Which Means A Directory Can Be Treated As A Package Even Without An `__init__.py` That's Why We Are Using `python -m folderName.fileName` To Run Test Files
+
+> [!NOTE]
+> To Disable Bytecode Generation, Run: `python -B -m folderName.fileName`
+> Or Put Below Code At The Very Top Of The Script:
+```
+import sys
+sys.dont_write_bytecode = True
+```
+
+> The Most Common Approach Is Ignoring It In Git:
+```
+__pycache__/
+*.py[cod]
+```
+
+---
