@@ -1,34 +1,58 @@
 # Informed Search Routing
 
-Implementation of A* and IDA* algorithms for solving optimal pathfinding problems in weighted graph-based city maps.
+Implementation of A* and IDA* informed search algorithms for optimal pathfinding in weighted graph
 
 ---
 
 ## Project Overview
 
-This project demonstrates how informed search algorithms can be used to find the least-cost route between two nodes in a weighted graph.
+This project solves a routing problem in a weighted graph representing a city map. The goal is to find the least-cost path between a start node and a goal node using informed search algorithms
 
 Implemented algorithms:
 
 - A* Search
 - IDA* Search (Iterative Deepening A*)
 
-The graph represents a city map where:
+Graph Model:
 
-- Nodes = intersections
-- Edges = roads
-- Edge weights = distance or travel cost
+- Nodes represent intersections
+- Edges represent roads
+- Edge weights represent travel cost (distance or time)
+
+Example:
+
+```
+graph = {
+    (0, 0): [((0, 1), 1), ((1, 0), 1.5)],
+    (0, 1): [((0, 0), 1), ((1, 1), 1)]
+}
+```
+
+---
+
+## Heuristic
+
+Euclidean Distance:
+
+`h(n) = sqrt((x2 - x1)^2 + (y2 - y1)^2)`
+
+or
+
+Manhattan Distance:
+
+`h(n) = |x2 - x1| + |y2 - y1|`
 
 ---
 
 ## Features
 
 - Load graph from JSON file
-- Run A* search
-- Run IDA* search
-- Compare algorithm performance
-- Report visited nodes
-- Report optimal path cost
+- A* pathfinding
+- IDA* pathfinding
+- Algorithm comparison
+- Visited node statistics
+- Command-line interface
+- Automated tests
 
 ---
 
@@ -60,15 +84,30 @@ Informed-Search-Routing/
 ├── README.md
 └── requirements.txt
 ```
+
+---
+
 ## Install Dependencies
+
 `pip install -r requirements.txt`
 
-## References
-[A* search algorithm](https://en.wikipedia.org/wiki/A*_search_algorithm)
-[A* Search Algorithm](https://www.geeksforgeeks.org/dsa/a-search-algorithm/)
-[Introduction to A*](https://theory.stanford.edu/~amitp/GameProgramming/AStarComparison.html)
-[A* Search Algorithm](https://viblo.asia/p/a-search-algorithm-aWj53BN1l6m)
-[A* Algorithm (OCR A Level Computer Science): Revision Note](https://www.savemyexams.com/a-level/computer-science/ocr/17/revision-notes/8-algorithms/8-1-algorithms/a-algorithm/)
-[Application of A* algorithm in intelligent vehicle path planning](https://www.extrica.com/article/22828)
-[Introduction to the A* Algorithm](https://www.redblobgames.com/pathfinding/a-star/introduction.html)
-[Amit’s A* Pages](https://theory.stanford.edu/~amitp/GameProgramming/)
+---
+
+## Run
+
+`python src/main.py`
+
+---
+
+## Example Output
+
+Path:
+[(0,0), (0,1), (1,1), (2,1)]
+
+Cost:
+3.5
+
+Visited Nodes:
+6
+
+---
