@@ -10,12 +10,11 @@ print("Euclidean Distance:", euc_dist)
 print("Manhattan Distance:", euc_dist)
 
 """
-Running: `python .\tests\test_heuristic.py` Gives Error of ModuleNotFoundError. For Correction, Changed The Import Path Of graph_loader.py
-And city_graph.json
+Notice:
+Running `python .\\tests\\manual\\heuristic.py` Gives Error of ModuleNotFoundError
 
 ------------------
 
-From The Root Directory
-Run: `python -m tests.test_heuristic`
-Test: `python -m pytest`
+From Root Directory
+Run: `python -m tests.manual.heuristic`
 """
