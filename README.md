@@ -58,27 +58,43 @@ Manhattan Distance:
 
 ## Project Structure
 
-```text
+```
 Informed-Search-Routing/
 │
 ├── data/
 │   └── city_graph.json
 │
 ├── docs/
+│   ├── img/
 │   ├── Project.pdf
 │   └── report.ipynb
 │
 ├── src/
 │   ├── astar.py
+│   ├── comparison.py
 │   ├── graph_loader.py
 │   ├── heuristic.py
 │   ├── idastar.py
-│   ├── main.py
-│   └── utils.py
+│   └── main.py
 │
 ├── tests/
-│   ├── test_algorithms.py
-│   └── test_loader.py
+│   ├── manual/
+│   │    ├── astar.py
+│   │    ├── basic.py
+│   │    ├── comparison.py
+│   │    ├── correctness.py
+│   │    ├── edge_cases.py
+│   │    ├── heuristic.py
+│   │    ├── idastar.py
+│   │    ├── loader.py
+│   │    └── run_tests.py
+│   │
+│   ├── pytest/
+│   │    ├── test_astar.py
+│   │    ├── test_correctness.py
+│   │    ├── test_idastar.py
+│   │    └── test_loader.py
+│   └── test.py
 │
 ├── .gitignore
 ├── README.md
