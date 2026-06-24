@@ -22,21 +22,16 @@ def compare_algorithms(graph, start, goal):
     tracemalloc.start()
     astar_start = time.perf_counter()
     astar_path, astar_cost, astar_visited = astar(graph, start, goal)
-    astar_end = time.perf_counter()
-    # Execution Time
-    astar_time = (astar_end - astar_start)
+    astar_elapced_time = (time.perf_counter() - astar_start) # Execution Time
 
     astar_current, astar_peak = tracemalloc.get_traced_memory()
     tracemalloc.stop()
-
 
     # IDA* Executaion
     tracemalloc.start()
     idastar_start = time.perf_counter()
     idastar_path, idastar_cost, idastar_visited = idastar(graph, start, goal)
-    idastar_end = time.perf_counter()
-    # Execution Time
-    idastar_time = (idastar_end - idastar_start)
+    idastar_elapced_time = (time.perf_counter() - idastar_start) # Execution Time
 
     idastar_current, idastar_peak = tracemalloc.get_traced_memory()
     tracemalloc.stop()
@@ -64,7 +59,7 @@ def compare_algorithms(graph, start, goal):
         f"{'A*':<15}"
         f"{astar_cost:<10}"
         f"{astar_visited:<10}"
-        f"{astar_time:<16.8f}"
+        f"{astar_elapced_time:<16.8f}"
         f"{astar_memory:.2f}"
     )
 
@@ -72,6 +67,6 @@ def compare_algorithms(graph, start, goal):
         f"{'IDA*':<15}"
         f"{idastar_cost:<10}"
         f"{idastar_visited:<10}"
-        f"{idastar_time:<16.8f}"
+        f"{idastar_elapced_time:<16.8f}"
         f"{idastar_memory:.2f}"
     )
